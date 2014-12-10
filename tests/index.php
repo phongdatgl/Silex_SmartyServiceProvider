@@ -5,7 +5,7 @@ $app = new Silex\Application();
 $app['debug'] = true;
 define('APP_PATH', __DIR__);
 $app->register(new SmartyServiceProvider(), array(
-          'smarty.dir' => APP_PATH . '/../vendor/Smarty/',
+         // 'smarty.dir' => APP_PATH . '/../vendor/Smarty/',
           'smarty.options' => array(
                 'template_dir' => APP_PATH . '/views',
                 'caching'         => false,

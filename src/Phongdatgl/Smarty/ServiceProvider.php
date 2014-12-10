@@ -26,11 +26,11 @@ class ServiceProvider implements ServiceProviderInterface {
     public function register(Application $app) {
         $app['smarty'] = $app->share(function () use ($app) {
                 if (!isset ($app['smarty.dir'])) {
-                    require_once(__DIR__ . '../../../../vendor/Smarty/libs/Smarty.class.php');
+                    @require_once(__DIR__ . '../../../../vendor/smarty/smarty/libs/Smarty.class.php');
                 }
 
                 if (!class_exists('Smarty') and isset ($app['smarty.dir'])) {
-                    require_once($app['smarty.dir'] . '/libs/Smarty.class.php');
+                    @require_once($app['smarty.dir'] . '/libs/Smarty.class.php');
                 }
 
                 if (!class_exists('Smarty')) {
