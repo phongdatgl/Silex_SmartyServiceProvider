@@ -40,6 +40,7 @@ Sử dụng trên silex
 
 ```php
 $app->get('/hello/{name}', function ($name) use ($app) {
-    return $app['smarty']->display('hello.tpl');
+	$app['smarty']->assign('name', 'John Doe');
+    return $app['smarty']->render('hello.tpl', array('age'=>15));
 });
 ```
